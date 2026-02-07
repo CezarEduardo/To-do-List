@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playwrite', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../images/image-to-do-list.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#to_do{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #313174;
+    padding: 18px;
+    border-radius: 8px;
+    width: 430px;
+}
+
+#to_do h1{
+    color: #438aa0;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.to-do-form{
+    display: flex;
+    width: 100%;
+}
+
+.to-do-form input{
+    background-color: transparent;
+    border: none;
+    color: #e5f9ff;
+    font-size: 16px;
+    width: 100%;
+    padding: 4px;
+    border-bottom: 2px solid #a781e4;
+}
+
+.to-do-form input:focus-visible{
+    outline: none;
+}
+
+.to-do-form .form-button{
+    padding: 10px;
+    background-color: rgb(101, 108, 173);
+    border: none;
+    font-size: 20px;
+    margin-left: 10px;
+    min-width: 40px;
+    min-height: 40px;
+    transition: scale 0,.5s ease;
+    border-radius: 100%;
+}
+
+.to-do-form .form-button:hover{
+    cursor: pointer;
+    scale: 1.05;
+}
+
+#tasks{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9d9dd4;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.task .progress{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.task .progress.done + .task-description{
+    text-decoration: line-through;
+    color: #6c9bbc;
+}
+
+.task .task-description{
+    margin-right: 10px;
+}
+
+.task .task-actions{
+    display: flex;
+    gap: 10px;
+
+}
+
+.action-button{
+    font-size: 16px;
+}
+
+.action-button.edit-button{
+    color: #082f4b;
+}
+
+.action-button.delete-button{
+    color: #c02f2f;
+}
+
+@media screen and (max-width: 600px){
+    #to_do{
+        width: 300px;
+    }
+}
+
+.hidden{
+    display: none !important;
+}
